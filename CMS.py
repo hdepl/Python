@@ -62,7 +62,8 @@ def show_all_customer():
 while(True):
     print('1.Add Customer.\n2.Search Customer.\n3.Modify Customer.\n4.Delete Customer.\n5.Show All Customer.\n0.Exit')
     ch=input('Enter Your Choice')
-    if ch=='1':
+    match ch:
+    case '1':
         cus=Customer()
         cus.id=int(input('Enter id'))
         cus.name=input('Enter Name')
@@ -73,7 +74,7 @@ while(True):
         cus.add_customer()
         print('Customer Added Sucessfully')
         #Write code to add a customer
-    elif ch=='2':
+    case '2':
         cus=Customer()
         cus_id=int(input('Enter ID'))
         check=cus.search_customer(cus_id)
@@ -84,7 +85,7 @@ while(True):
 
         
         #Write code to Search a customer
-    elif ch=='3':
+    case '3':
         cus=Customer()
         cus.id=int(input('Enter ID for update'))
         cus.name=input('Enter Name for Update')
@@ -100,7 +101,7 @@ while(True):
         
         
         #Write code to Modify a customer
-    elif ch=='4':
+    case '4':
       
         id=int(input('Enter ID'))
         cus=Customer()
@@ -112,11 +113,13 @@ while(True):
 
         
         #Write code to Delete a customer
-    elif ch=='5':
+    case '5':
         
         show_all_customer()
         #Write code to Show All a customer
     elif ch=='0':
         break
-        #Write code to Exit
+    case _:
+        exit()
+#Write code to Exit
 # PL Code Ends  Here
